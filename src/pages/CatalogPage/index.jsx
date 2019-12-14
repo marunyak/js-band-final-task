@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import Main from '../../components/Main';
 import Spinner from '../../components/spinner/spinner';
 import BookItem from './components/BookItem';
+import Filter from './components/Filter';
 import { getBooksFetch } from '../../services';
 import { fetchBooks } from '../../actions';
 
@@ -16,10 +17,30 @@ class Catalog extends React.Component {
     getBooksFetch();
   }
 
+  filter = () => {
+    const { books, search, price } = this.props;
+    const result = books.filter((item) => (search === '' || item.title.toLowerCase()
+      .search(new RegExp(`^${search.toLowerCase()}`, 'g')) !== -1))
+      .filter((item) => (this.priceTypes(price, item.price)));
+    return result;
+  }
+
+  priceTypes = (type, price) => {
+    const types = {
+      none: price,
+      low_price: price > 0 && price < 15,
+      medium_price: price > 15 && price < 30,
+      high_price: price > 30
+    };
+    return types[type];
+  }
+
+
   render() {
-    const { books, loading, error } = this.props;
+    const { loading, error } = this.props;
+    const newBooks = this.filter();
     const hasData = !(loading || error);
-    const newItem = hasData ? books.map((item) => (
+    const newItem = hasData ? newBooks.map((item) => (
       <BookItem book={item} key={item.id} />
     )) : null;
 
@@ -29,6 +50,7 @@ class Catalog extends React.Component {
           <Navigation />
         </Header>
         <Main>
+          <Filter />
           <div className="books-list d-flex flex-wrap justify-content-center mt-5">
             { loading ? <Spinner /> : null }
             {!loading && error && 'Error ...'}
@@ -44,7 +66,9 @@ const mapStateToProps = (state) => (
   {
     books: state.catalog.books,
     loading: state.catalog.loading,
-    error: state.catalog.error
+    error: state.catalog.error,
+    search: state.filter.search,
+    price: state.filter.price,
   }
 );
 
@@ -63,4 +87,6 @@ Catalog.propTypes = {
   books: PropTypes.array,
   loading: PropTypes.bool,
   error: PropTypes.bool,
+  search: PropTypes.string,
+  price: PropTypes.string,
 };

@@ -31,6 +31,7 @@ It is Book online shop. Which includes next functionality:
 ├── src/
 │   ├── actions/
 │   │   ├── bookList.jsx
+│   │   ├── filter.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
 │   ├── components/
@@ -49,6 +50,7 @@ It is Book online shop. Which includes next functionality:
 │   ├── pages/
 │   │   ├── CatalogPage
 │   │   │   ├── components/
+│   │   │   │   ├── Filter.jsx
 │   │   │   │   └── BookItem.jsx
 │   │   │   └── index.jsx
 │   │   ├── NotFoundPage
@@ -59,6 +61,7 @@ It is Book online shop. Which includes next functionality:
 │   │   │   └── index.jsx
 │   ├── reducers/
 │   │   ├── bookList.jsx
+│   │   ├── filter.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
 │   ├── routes/
@@ -120,23 +123,26 @@ $ npm run fix
 * `./public/index.html` - main html file;
 * `./public/favicon.ico` - icon for html page;
 * `./src/actions/bookList.jsx` - consist all bookList actions;
+* `./src/actions/filter.jsx` - consist filter action;
 * `./src/actions/index.jsx` - consist all actions;
 * `./src/actions/user.jsx` - consist all user actions;
-* `./src/componetns/spinner/spinner.jsx` - spinner component;
-* `./src/componetns/spinner/spinner.css` - css for spinner;
-* `./src/componetns/App.jsx` - file for routing;
-* `./src/componetns/Header.jsx` - header component;
-* `./src/componetns/Main.jsx` - main component;
-* `./src/componetns/Navigation.jsx` - navigation component;
+* `./src/components/spinner/spinner.jsx` - spinner component;
+* `./src/components/spinner/spinner.css` - css for spinner;
+* `./src/components/App.jsx` - file for routing;
+* `./src/components/Header.jsx` - header component;
+* `./src/components/Main.jsx` - main component;
+* `./src/components/Navigation.jsx` - navigation component;
 * `./src/history/index.jsx` - file createBrowseHashHistory;
 * `./src/images/shopping-cart.png` - cart image;
 * `./src/images/defaultPhoto.png` - image;
 * `./src/pages/CatalogPage/index.jsx` - catalog component;
 * `./src/pages/CatalogPage/components/BookItem.jsx` - BookItem component;
+* `./src/pages/CatalogPage/components/Filter.jsx` - BookItem component;
 * `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
 * `./src/pages/NotFoundPage/index.jsx` - page not found component;
 * `./src/pages/SignInPage/index.jsx` - signin component;
 * `./src/reducers/bookList.jsx` - consist bookList reducer;
+* `./src/reducers/bookList.jsx` - consist filter reducer;
 * `./src/reducers/user.jsx` - consist all user reducers;
 * `./src/reducers/index.jsx` - combine all reducers files;
 * `./src/routs/ProtectedRoutes.jsx` - component with protected routes;
