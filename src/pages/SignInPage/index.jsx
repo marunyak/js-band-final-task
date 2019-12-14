@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from '../../components/Header';
+import Main from '../../components/Main';
 import { userSignIn } from '../../services';
-import img from './images/defaultPhoto.jpg';
+import img from '../../images/defaultPhoto.jpg';
 
 class SignIn extends React.Component {
   handleValidation = (value) => {
@@ -30,40 +31,42 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Header />
-        <div className="d-flex justify-content-center mt-5">
-          <div className="text-center">
-            <img src={img} alt="" style={{ height: '200px', width: '200px' }} />
-            <form>
-              <div className="form-group mt-3">
-                <label htmlFor="username" style={{ display: 'block' }} className="font-weight-bold">
+        <Main>
+          <div className="d-flex justify-content-center mt-5">
+            <div className="text-center">
+              <img src={img} alt="" style={{ height: '200px', width: '200px' }} />
+              <form>
+                <div className="form-group mt-3">
+                  <label htmlFor="username" style={{ display: 'block' }} className="font-weight-bold">
                 Username
-                  <input
-                    type="text"
-                    name="username"
-                    className="form-control mt-2"
-                    placeholder="type Username"
-                    ref={(node) => { this.input = node; }}
-                    required
-                  />
+                    <input
+                      type="text"
+                      name="username"
+                      className="form-control mt-2"
+                      placeholder="type Username"
+                      ref={(node) => { this.input = node; }}
+                      required
+                    />
+                    <div
+                      className="error text-danger text-break text-center"
+                      ref={(node) => { this.error = node; }}
+                    />
+                  </label>
                   <div
-                    className="error text-danger text-break text-center"
-                    ref={(node) => { this.error = node; }}
-                  />
-                </label>
-                <div
-                  className="btn btn-block btn-primary mt-3"
-                  style={{ cursor: 'pointer' }}
-                  onClick={(e) => this.handleSubmit(e)}
-                >
+                    className="btn btn-block btn-primary mt-3"
+                    style={{ cursor: 'pointer' }}
+                    onClick={(e) => this.handleSubmit(e)}
+                  >
 Sign-In
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </Main>
+      </>
     );
   }
 }
