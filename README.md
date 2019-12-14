@@ -30,11 +30,36 @@ It is Book online shop. Which includes next functionality:
 │   └── index.html
 ├── src/
 │   ├── actions/
+│   │   ├── index.jsx
+│   │   └── user.jsx
 │   ├── components/
 │   │   ├── App.jsx
+│   │   └── Header.jsx
+│   ├── history/
+│   │   └── index.jsx
 │   ├── pages/
+│   │   ├── CatalogPage
+│   │   │   ├── components/
+│   │   │   └── index.jsx
+│   │   ├── NotFoundPage
+│   │   │   ├── css/
+│   │   │   │   └── main.css
+│   │   │   └── index.jsx
+│   │   ├── SignInPage
+│   │   │   ├── images/
+│   │   │   │   └── defaultPhoto.png
+│   │   │   └── index.jsx
 │   ├── reducers/
+│   │   ├── index.jsx
+│   │   └── user.jsx
+│   ├── routes/
+│   │   └── ProtectedRoutes.jsx
+│   ├── services/
+│   │   ├── index.jsx
+│   │   └── user.jsx
 │   ├── store/
+│   │   └── index.jsx
+│   ├── config.jsx
 │   └── index.jsx
 ├── .eslintrc
 ├── .gitignore
@@ -66,6 +91,31 @@ $ npm start
  - [Bootstrap](https://bootstrap-4.ru/docs/4.3.1/getting-started/introduction/) - toolkit for developing with HTML, CSS, and JS
 
 ## Scripts description
+* `./public/index.html` - main html file;
+* `./public/favicon.ico` - icon for html page;
+* `./src/actions/index.jsx` - consist all actions logic;
+* `./src/actions/user.jsx` - consist all user actions;
+* `./src/componetns/App.jsx` - file for routing;
+* `./src/componetns/Header.jsx` - header component;
+* `./src/history/index.jsx` - file createBrowseHashHistory;
+* `./src/pages/CatalogPage/index.jsx` - catalog component;
+* `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
+* `./src/pages/NotFoundPage/index.jsx` - page not found component;
+* `./src/pages/SignInPage/images/defaultPhoto.png` - image;
+* `./src/pages/SignInPage/index.jsx` - signin component;
+* `./src/reducers/user.jsx` - consist all user reducers;
+* `./src/reducers/index.jsx` - combine all reducers files;
+* `./src/roots/ProtectedRoutes.jsx` - component with protected routes;
+* `./src/services/index.jsx` - consist all reducers logic;
+* `./src/services/user.jsx` - consist user reducers;
+* `./src/store/index.jsx` - file createStore;
+* `./src/config.jsx` - file with config;
+* `./src/index.jsx` - file which render all page;
+* `.eslintrc` - file for lint configuration;
+* `.travis.yml` - file for CI configuration;
+* `.gitignore` - ignore files when we push project in repo;
+* `package-lock.json` - automatically generated for any operations where npm modifies either the node_modules tree, or package.json;
+* `package.json` - file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies.
 
 ## Status
 Project is: _in progress_
