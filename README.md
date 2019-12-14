@@ -50,6 +50,7 @@ It is Book online shop. Which includes next functionality:
 │   ├── pages/
 │   │   ├── CatalogPage
 │   │   │   ├── components/
+│   │   │   │   ├── Filter.jsx
 │   │   │   │   └── BookItem.jsx
 │   │   │   └── index.jsx
 │   │   ├── NotFoundPage
@@ -136,6 +137,7 @@ $ npm run fix
 * `./src/images/defaultPhoto.png` - image;
 * `./src/pages/CatalogPage/index.jsx` - catalog component;
 * `./src/pages/CatalogPage/components/BookItem.jsx` - BookItem component;
+* `./src/pages/CatalogPage/components/Filter.jsx` - BookItem component;
 * `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
 * `./src/pages/NotFoundPage/index.jsx` - page not found component;
 * `./src/pages/SignInPage/index.jsx` - signin component;
