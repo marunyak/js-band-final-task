@@ -1,5 +1,5 @@
 import { SIGN_IN, CHECK_SIGN, SIGN_OUT } from '../actions';
-import storage from '../storage';
+import storage from '../storage/index';
 
 const initialState = {
   username: '',

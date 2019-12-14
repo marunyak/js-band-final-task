@@ -30,34 +30,41 @@ It is Book online shop. Which includes next functionality:
 │   └── index.html
 ├── src/
 │   ├── actions/
+│   │   ├── bookList.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
 │   ├── components/
+│   │   ├── spinner/
+│   │   │   ├── spinner.css
+│   │   │   └── spinner.jsx
 │   │   ├── App.jsx
-│   │   └── Header.jsx
+│   │   ├── Header.jsx
+│   │   ├── Main.jsx
+│   │   └── Navigation.jsx
 │   ├── history/
 │   │   └── index.jsx
+│   ├── images/
+│   │   ├── defaultPhoto.png
+│   │   └── shopping-cart.png
 │   ├── pages/
 │   │   ├── CatalogPage
 │   │   │   ├── components/
-│   │   │   │   └── Navigation.jsx
-│   │   │   ├── images/
-│   │   │   │   └── shopping-cart.png
+│   │   │   │   └── BookItem.jsx
 │   │   │   └── index.jsx
 │   │   ├── NotFoundPage
 │   │   │   ├── css/
 │   │   │   │   └── main.css
 │   │   │   └── index.jsx
 │   │   ├── SignInPage
-│   │   │   ├── images/
-│   │   │   │   └── defaultPhoto.png
 │   │   │   └── index.jsx
 │   ├── reducers/
+│   │   ├── bookList.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
 │   ├── routes/
 │   │   └── ProtectedRoutes.jsx
 │   ├── services/
+│   │   ├── books.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
 │   ├── storage/
@@ -86,6 +93,20 @@ $ npm install
 $ npm start
 ```
 
+## Available console commands
+For build project:
+```sh
+$ npm run build
+```
+For lint project:
+```sh
+$ npm run lint
+```
+For fix errors which lint found in project:
+```sh
+$ npm run fix
+```
+
 ## Technologies
  - [React](https://reactjs.org/) - JavaScript library for building user interfaces
  - [Redux](https://redux.js.org/) - a predictable state container for JavaScript apps
@@ -98,24 +119,31 @@ $ npm start
 ## Scripts description
 * `./public/index.html` - main html file;
 * `./public/favicon.ico` - icon for html page;
-* `./src/actions/index.jsx` - consist all actions logic;
+* `./src/actions/bookList.jsx` - consist all bookList actions;
+* `./src/actions/index.jsx` - consist all actions;
 * `./src/actions/user.jsx` - consist all user actions;
+* `./src/componetns/spinner/spinner.jsx` - spinner component;
+* `./src/componetns/spinner/spinner.css` - css for spinner;
 * `./src/componetns/App.jsx` - file for routing;
 * `./src/componetns/Header.jsx` - header component;
+* `./src/componetns/Main.jsx` - main component;
+* `./src/componetns/Navigation.jsx` - navigation component;
 * `./src/history/index.jsx` - file createBrowseHashHistory;
+* `./src/images/shopping-cart.png` - cart image;
+* `./src/images/defaultPhoto.png` - image;
 * `./src/pages/CatalogPage/index.jsx` - catalog component;
-* `./src/pages/CatalogPage/components/Navigation.jsx` - Navigation component;
-* `./src/pages/CatalogPage/images/shopping-cart.png` - cart image;
+* `./src/pages/CatalogPage/components/BookItem.jsx` - BookItem component;
 * `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
 * `./src/pages/NotFoundPage/index.jsx` - page not found component;
-* `./src/pages/SignInPage/images/defaultPhoto.png` - image;
 * `./src/pages/SignInPage/index.jsx` - signin component;
+* `./src/reducers/bookList.jsx` - consist bookList reducer;
 * `./src/reducers/user.jsx` - consist all user reducers;
 * `./src/reducers/index.jsx` - combine all reducers files;
-* `./src/roots/ProtectedRoutes.jsx` - component with protected routes;
-* `./src/services/index.jsx` - consist all reducers logic;
-* `./src/services/user.jsx` - consist user reducers;
-* `./src/store/index.js` - localstorage class;
+* `./src/routs/ProtectedRoutes.jsx` - component with protected routes;
+* `./src/services/books.jsx` -  consist service for bookList;
+* `./src/services/index.jsx` - consist all services;
+* `./src/services/user.jsx` - consist user service;
+* `./src/storage/index.js` - localstorage class;
 * `./src/store/index.jsx` - file createStore;
 * `./src/config.jsx` - file with config;
 * `./src/index.jsx` - file which render all page;

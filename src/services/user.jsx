@@ -1,6 +1,6 @@
 import { replace } from 'connected-react-router';
 import config from '../config';
-import storage from '../storage';
+import storage from '../storage/index';
 import { signIn } from '../actions';
 
 export const userSignIn = (username) => (dispatch) => {

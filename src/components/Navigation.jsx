@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { signOut } from '../../../actions';
+import { signOut } from '../actions';
 import img from '../images/shopping-cart.png';
 
 class Navigation extends React.Component {
