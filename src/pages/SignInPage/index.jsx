@@ -32,7 +32,7 @@ class SignIn extends React.Component {
     return (
       <div>
         <Header />
-        <div className="d-flex justify-content-center mt-51">
+        <div className="d-flex justify-content-center mt-5">
           <div className="text-center">
             <img src={img} alt="" style={{ height: '200px', width: '200px' }} />
             <form>

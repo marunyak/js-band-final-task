@@ -1,4 +1,5 @@
-import { SIGN_IN, CHECK_SIGN } from '../actions';
+import { SIGN_IN, CHECK_SIGN, SIGN_OUT } from '../actions';
+import storage from '../storage';
 
 const initialState = {
   username: '',
@@ -19,12 +20,16 @@ export const user = (state = initialState, action) => {
       return newState;
     }
     case CHECK_SIGN: {
-      let userData = localStorage.getItem('user');
+      let userData = storage.get('user');
       if (userData) {
         userData = JSON.parse(userData);
         return { ...state, ...userData };
       }
       return state;
+    }
+    case SIGN_OUT: {
+      storage.remove('user');
+      return { ...state, ...initialState };
     }
     default:
       return state;

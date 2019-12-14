@@ -4,17 +4,24 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Catalog from '../pages/CatalogPage';
 import NotFound from '../pages/NotFoundPage';
+import SignIn from '../pages/SignInPage';
 
 function ProtectedRoutes({ userToken }) {
   return userToken ? (
     <>
       <Switch>
+        <Redirect from="/signin" to="/books" />
         <Route path="/books" component={Catalog} />
-        <Route component={NotFound} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </>
   )
-    : (<Redirect to="/signin" />);
+    : (
+      <>
+        <Redirect from="/" to="/signin" />
+        <Route path="/signin" component={SignIn} />
+      </>
+    );
 }
 
 const mapStateToProps = (state) => ({
