@@ -5,7 +5,6 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { checkSign } from '../actions';
-import SignIn from '../pages/SignInPage';
 import ProtectedRoutes from '../routes/ProtectedRoutes';
 
 function App({ checkSign }) {
@@ -13,7 +12,6 @@ function App({ checkSign }) {
   return (
     <Router>
       <Switch>
-        <Route path="/signin" component={SignIn} />
         <Route component={ProtectedRoutes} />
       </Switch>
     </Router>

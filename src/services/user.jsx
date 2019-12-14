@@ -1,5 +1,6 @@
 import { replace } from 'connected-react-router';
 import config from '../config';
+import storage from '../storage';
 import { signIn } from '../actions';
 
 export const userSignIn = (username) => (dispatch) => {
@@ -12,7 +13,7 @@ export const userSignIn = (username) => (dispatch) => {
     body: JSON.stringify({ username })
   }).then((res) => res.json())
     .then((data) => {
-      localStorage.setItem('user', JSON.stringify(data));
+      storage.add('user', data);
       dispatch(signIn(data));
       dispatch(replace('/books'));
     });

@@ -1,17 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import Navigation from './components/Navigation';
 import Header from '../../components/Header';
 
-class Catalog extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header />
-      </div>
-    );
-  }
+function Catalog() {
+  return (
+    <div>
+      <Header>
+        <Navigation />
+      </Header>
+    </div>
+  );
 }
 
 export default withRouter(connect(null)(Catalog));

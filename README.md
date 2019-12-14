@@ -40,6 +40,9 @@ It is Book online shop. Which includes next functionality:
 │   ├── pages/
 │   │   ├── CatalogPage
 │   │   │   ├── components/
+│   │   │   │   └── Navigation.jsx
+│   │   │   ├── images/
+│   │   │   │   └── shopping-cart.png
 │   │   │   └── index.jsx
 │   │   ├── NotFoundPage
 │   │   │   ├── css/
@@ -57,6 +60,8 @@ It is Book online shop. Which includes next functionality:
 │   ├── services/
 │   │   ├── index.jsx
 │   │   └── user.jsx
+│   ├── storage/
+│   │   └── index.jsx
 │   ├── store/
 │   │   └── index.jsx
 │   ├── config.jsx
@@ -99,6 +104,8 @@ $ npm start
 * `./src/componetns/Header.jsx` - header component;
 * `./src/history/index.jsx` - file createBrowseHashHistory;
 * `./src/pages/CatalogPage/index.jsx` - catalog component;
+* `./src/pages/CatalogPage/components/Navigation.jsx` - Navigation component;
+* `./src/pages/CatalogPage/images/shopping-cart.png` - cart image;
 * `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
 * `./src/pages/NotFoundPage/index.jsx` - page not found component;
 * `./src/pages/SignInPage/images/defaultPhoto.png` - image;
@@ -108,6 +115,7 @@ $ npm start
 * `./src/roots/ProtectedRoutes.jsx` - component with protected routes;
 * `./src/services/index.jsx` - consist all reducers logic;
 * `./src/services/user.jsx` - consist user reducers;
+* `./src/store/index.js` - localstorage class;
 * `./src/store/index.jsx` - file createStore;
 * `./src/config.jsx` - file with config;
 * `./src/index.jsx` - file which render all page;
