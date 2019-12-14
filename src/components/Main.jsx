@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+// eslint-disable-next-line react/prop-types
 function Main({ children }) {
   return (
     <main>
@@ -9,7 +8,3 @@ function Main({ children }) {
   );
 }
 export default Main;
-
-Main.propTypes = {
-  children: PropTypes.element
-};
