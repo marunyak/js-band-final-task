@@ -1,7 +1,7 @@
 import { replace } from 'connected-react-router';
 import config from '../config';
 import storage from '../storage';
-import { loadBook } from '../actions';
+import { fetchBookSuccess, fetchBookFail } from '../actions';
 
 export const getBookFetch = (id) => (dispatch) => {
   const dataUser = JSON.parse(storage.get('user'));
@@ -17,11 +17,14 @@ export const getBookFetch = (id) => (dispatch) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        dispatch(loadBook(data));
+        dispatch(fetchBookSuccess(data));
       })
       .catch((err) => {
         if (err === 'Unauthorized') {
+          storage.remove('user');
           dispatch(replace('/signin'));
+        } else {
+          dispatch(fetchBookFail(err));
         }
       });
   }

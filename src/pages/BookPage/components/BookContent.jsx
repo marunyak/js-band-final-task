@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BookCounter from './BookCounter';
+import Spinner from '../../../components/spinner/spinner';
 
 function BookContent(props) {
   const { book } = props;
-  if (!book.id) return null;
+  if (book.isLoading) return <Spinner />;
+  if (!book.isLoading && book.error) return 'Error ...';
+  if (!book.id) return !1;
+
   return (
     <div className="d-flex m-3">
       <div className="image-item mr-5" style={{ width: '460px' }}>
@@ -35,7 +39,7 @@ Description:
           {book.tags.map((item) => item).join(', ')}
         </div>
       </div>
-      <BookCounter price={book.price} count={book.count} />
+      <BookCounter book={book} />
     </div>
   );
 }
@@ -51,6 +55,8 @@ BookContent.propTypes = {
     level: PropTypes.string,
     description: PropTypes.string,
     cover: PropTypes.string,
-    tags: PropTypes.array
+    tags: PropTypes.array,
+    isLoading: PropTypes.bool,
+    error: PropTypes.bool
   })
 };

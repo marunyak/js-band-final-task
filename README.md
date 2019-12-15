@@ -32,6 +32,7 @@ It is Book online shop. Which includes next functionality:
 │   ├── actions/
 │   │   ├── book.jsx
 │   │   ├── bookList.jsx
+│   │   ├── cart.jsx
 │   │   ├── filter.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
@@ -68,6 +69,7 @@ It is Book online shop. Which includes next functionality:
 │   ├── reducers/
 │   │   ├── book.jsx
 │   │   ├── bookList.jsx
+│   │   ├── cart.jsx
 │   │   ├── filter.jsx
 │   │   ├── index.jsx
 │   │   └── user.jsx
@@ -132,6 +134,7 @@ $ npm run fix
 * `./public/favicon.ico` - icon for html page;
 * `./src/actions/book.jsx` - consist book actions;
 * `./src/actions/bookList.jsx` - consist all bookList actions;
+* `./src/actions/cart.jsx` - consist cart actions;
 * `./src/actions/filter.jsx` - consist filter action;
 * `./src/actions/index.jsx` - consist all actions;
 * `./src/actions/user.jsx` - consist all user actions;
@@ -155,6 +158,7 @@ $ npm run fix
 * `./src/pages/SignInPage/index.jsx` - signin component;
 * `./src/reducers/book.jsx` - consist book reducer;
 * `./src/reducers/bookList.jsx` - consist bookList reducer;
+* `./src/reducers/cart.jsx` - consist cart reducer;
 * `./src/reducers/filter.jsx` - consist filter reducer;
 * `./src/reducers/user.jsx` - consist all user reducers;
 * `./src/reducers/index.jsx` - combine all reducers files;
