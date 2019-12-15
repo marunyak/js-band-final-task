@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function BookItem({ book }) {
   return (
     <div
-
       className="book col-sm-3 shadow rounded p-3
       mr-3 mb-4 bg-white position
     -relative text-black"
@@ -14,7 +13,7 @@ function BookItem({ book }) {
       <div className="img-block mb-2">
         <img src={book.cover} alt="" style={{ width: '100%', height: '190px' }} />
       </div>
-      <h5 className="title">{book.title}</h5>
+      <h6 className="title" style={{ height: '48px' }}>{book.title}</h6>
       <p className="text text-break">{book.author}</p>
       <div className="d-flex justify-content-between">
         <div>
@@ -45,5 +44,5 @@ BookItem.propTypes = {
     description: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
     tags: PropTypes.array.isRequired
-  }).isRequired
+  })
 };

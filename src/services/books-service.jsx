@@ -1,3 +1,4 @@
+import { replace } from 'connected-react-router';
 import config from '../config';
 import storage from '../storage/index';
 import { fetchBooksSuccess, fetchBooksFail } from '../actions';
@@ -7,7 +8,7 @@ export const getBooksFetch = () => (dispatch) => {
   const { token } = dataUser;
 
   if (token) {
-    fetch(`${config.baseURL}/books`, {
+    fetch(`${config.baseURL}books`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -19,8 +20,11 @@ export const getBooksFetch = () => (dispatch) => {
         dispatch(fetchBooksSuccess(response));
       })
       .catch((err) => {
-        storage.remove('user');
-        dispatch(fetchBooksFail(err));
+        if (err.message === 'Unauthorized') {
+          dispatch(replace('/signin'));
+        } else {
+          dispatch(fetchBooksFail(err));
+        }
       });
   }
 };

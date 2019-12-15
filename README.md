@@ -30,6 +30,7 @@ It is Book online shop. Which includes next functionality:
 │   └── index.html
 ├── src/
 │   ├── actions/
+│   │   ├── book.jsx
 │   │   ├── bookList.jsx
 │   │   ├── filter.jsx
 │   │   ├── index.jsx
@@ -48,18 +49,24 @@ It is Book online shop. Which includes next functionality:
 │   │   ├── defaultPhoto.png
 │   │   └── shopping-cart.png
 │   ├── pages/
-│   │   ├── CatalogPage
+│   │   ├── BookPage/
+│   │   │   ├── components/
+│   │   │   │   ├── BookCounter.jsx
+│   │   │   │   └── BookContent.jsx
+│   │   │   └── index.jsx
+│   │   ├── CatalogPage/
 │   │   │   ├── components/
 │   │   │   │   ├── Filter.jsx
 │   │   │   │   └── BookItem.jsx
 │   │   │   └── index.jsx
-│   │   ├── NotFoundPage
+│   │   ├── NotFoundPage/
 │   │   │   ├── css/
 │   │   │   │   └── main.css
 │   │   │   └── index.jsx
-│   │   ├── SignInPage
+│   │   ├── SignInPage/
 │   │   │   └── index.jsx
 │   ├── reducers/
+│   │   ├── book.jsx
 │   │   ├── bookList.jsx
 │   │   ├── filter.jsx
 │   │   ├── index.jsx
@@ -67,9 +74,10 @@ It is Book online shop. Which includes next functionality:
 │   ├── routes/
 │   │   └── ProtectedRoutes.jsx
 │   ├── services/
-│   │   ├── books.jsx
+│   │   ├── book-service.jsx
+│   │   ├── books-service.jsx
 │   │   ├── index.jsx
-│   │   └── user.jsx
+│   │   └── user-service.jsx
 │   ├── storage/
 │   │   └── index.jsx
 │   ├── store/
@@ -122,6 +130,7 @@ $ npm run fix
 ## Scripts description
 * `./public/index.html` - main html file;
 * `./public/favicon.ico` - icon for html page;
+* `./src/actions/book.jsx` - consist book actions;
 * `./src/actions/bookList.jsx` - consist all bookList actions;
 * `./src/actions/filter.jsx` - consist filter action;
 * `./src/actions/index.jsx` - consist all actions;
@@ -135,20 +144,25 @@ $ npm run fix
 * `./src/history/index.jsx` - file createBrowseHashHistory;
 * `./src/images/shopping-cart.png` - cart image;
 * `./src/images/defaultPhoto.png` - image;
+* `./src/pages/BookPage/index.jsx` - book component;
+* `./src/pages/BookPage/components/BookContent.jsx` - BookContent component;
+* `./src/pages/BookPage/components/BookCounter.jsx` - BookCounter component;
 * `./src/pages/CatalogPage/index.jsx` - catalog component;
 * `./src/pages/CatalogPage/components/BookItem.jsx` - BookItem component;
 * `./src/pages/CatalogPage/components/Filter.jsx` - BookItem component;
 * `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
 * `./src/pages/NotFoundPage/index.jsx` - page not found component;
 * `./src/pages/SignInPage/index.jsx` - signin component;
+* `./src/reducers/book.jsx` - consist book reducer;
 * `./src/reducers/bookList.jsx` - consist bookList reducer;
-* `./src/reducers/bookList.jsx` - consist filter reducer;
+* `./src/reducers/filter.jsx` - consist filter reducer;
 * `./src/reducers/user.jsx` - consist all user reducers;
 * `./src/reducers/index.jsx` - combine all reducers files;
 * `./src/routs/ProtectedRoutes.jsx` - component with protected routes;
-* `./src/services/books.jsx` -  consist service for bookList;
+* `./src/services/book-service.jsx` -  consist service for book;
+* `./src/services/books-service.jsx` -  consist service for bookList;
 * `./src/services/index.jsx` - consist all services;
-* `./src/services/user.jsx` - consist user service;
+* `./src/services/user-service.jsx` - consist user service;
 * `./src/storage/index.js` - localstorage class;
 * `./src/store/index.jsx` - file createStore;
 * `./src/config.jsx` - file with config;
