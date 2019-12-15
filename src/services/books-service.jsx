@@ -21,6 +21,7 @@ export const getBooksFetch = () => (dispatch) => {
       })
       .catch((err) => {
         if (err.message === 'Unauthorized') {
+          storage.remove('user');
           dispatch(replace('/signin'));
         } else {
           dispatch(fetchBooksFail(err));

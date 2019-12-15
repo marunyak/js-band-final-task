@@ -1,25 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addToCart } from '../../../actions';
 
 class BookCounter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      countBooks: 0,
+      temp: 1,
+      countBooks: 1,
     };
   }
 
     handleChange = ({ target: { name, value } }) => {
-      const { count } = this.props;
-      if (value > count) return;
-      this.setState({ [name]: value });
+      const { book: { count } } = this.props;
+      if (value > count) {
+        const { temp } = this.state;
+        this.setState({ [name]: temp });
+        this.input.value = temp;
+      } else this.setState({ [name]: value, temp: value });
     }
 
-    handleSubmit = () => 1
+    handleSubmit = (e) => {
+      e.preventDefault();
+      const {
+        book: {
+          id, title, price
+        }, addToCart
+      } = this.props;
+      const { countBooks } = this.state;
+      addToCart({ [id]: { title, price, count: countBooks } });
+    }
 
     render() {
       const { countBooks } = this.state;
-      const { price, count } = this.props;
+      const { book: { price, count } } = this.props;
       return (
         <div
           className="m-3 position-relative"
@@ -46,7 +61,8 @@ class BookCounter extends React.Component {
                   type="number"
                   min="1"
                   max={count}
-                  defaultValue="1"
+                  defaultValue={countBooks}
+                  ref={(node) => { (this.input = node); }}
                   required
                 />
               </div>
@@ -54,7 +70,7 @@ class BookCounter extends React.Component {
             <div className="total-price d-flex justify-content-between m-4">
               <div className="price-item"><h5>Total price</h5></div>
               <div className="price-item">
-                <h5>{(countBooks ? countBooks * price : price).toFixed(2)}</h5>
+                <h5>{(countBooks > 1 ? countBooks * price : price).toFixed(2)}</h5>
               </div>
             </div>
             <button
@@ -69,9 +85,14 @@ class BookCounter extends React.Component {
       );
     }
 }
-export default BookCounter;
+export default connect(null, { addToCart })(BookCounter);
 
 BookCounter.propTypes = {
-  price: PropTypes.number,
-  count: PropTypes.number,
+  book: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    count: PropTypes.number,
+  }),
+  addToCart: PropTypes.func
 };

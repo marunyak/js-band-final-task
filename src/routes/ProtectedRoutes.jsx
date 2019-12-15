@@ -20,7 +20,7 @@ function ProtectedRoutes({ userToken }) {
   )
     : (
       <>
-        <Redirect to="/signin" />
+        <Redirect from="/" to="/signin" />
         <Route path="/signin" component={SignIn} />
       </>
     );
