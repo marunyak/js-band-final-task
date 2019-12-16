@@ -8,7 +8,7 @@ class BookCounter extends React.Component {
     super(props);
     this.state = {
       temp: 1,
-      countBooks: 1,
+      countBooks: '1',
     };
   }
 
@@ -29,7 +29,9 @@ class BookCounter extends React.Component {
         }, addToCart
       } = this.props;
       const { countBooks } = this.state;
-      addToCart({ [id]: { title, price, count: countBooks } });
+      addToCart({
+        id, title, price, count: countBooks
+      });
     }
 
     render() {

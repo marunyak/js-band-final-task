@@ -6,12 +6,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { checkSign } from '../actions';
 import ProtectedRoutes from '../routes/ProtectedRoutes';
+import SignIn from '../pages/SignInPage';
 
 function App({ checkSign }) {
   checkSign();
   return (
     <Router>
       <Switch>
+        <Route path="/signin" component={SignIn} />
         <Route component={ProtectedRoutes} />
       </Switch>
     </Router>
