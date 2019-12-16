@@ -55,6 +55,12 @@ It is Book online shop. Which includes next functionality:
 │   │   │   │   ├── BookCounter.jsx
 │   │   │   │   └── BookContent.jsx
 │   │   │   └── index.jsx
+│   │   ├── CartPage/
+│   │   │   ├── components/
+│   │   │   │   ├── CartEmpty.jsx
+│   │   │   │   ├── CartItem.jsx
+│   │   │   │   └── CartList.jsx
+│   │   │   └── index.jsx
 │   │   ├── CatalogPage/
 │   │   │   ├── components/
 │   │   │   │   ├── Filter.jsx
@@ -79,6 +85,7 @@ It is Book online shop. Which includes next functionality:
 │   │   ├── book-service.jsx
 │   │   ├── books-service.jsx
 │   │   ├── index.jsx
+│   │   ├── purchase-service.jsx
 │   │   └── user-service.jsx
 │   ├── storage/
 │   │   └── index.jsx
@@ -150,9 +157,13 @@ $ npm run fix
 * `./src/pages/BookPage/index.jsx` - book component;
 * `./src/pages/BookPage/components/BookContent.jsx` - BookContent component;
 * `./src/pages/BookPage/components/BookCounter.jsx` - BookCounter component;
+* `./src/pages/CartPage/index.jsx` - cart component;
+* `./src/pages/CartPage/components/CartEmpty.jsx` - CartEmpty component;
+* `./src/pages/CartPage/components/CartList.jsx` - CartList component;
+* `./src/pages/CartPage/components/CartItem.jsx` - CartItem component;
 * `./src/pages/CatalogPage/index.jsx` - catalog component;
 * `./src/pages/CatalogPage/components/BookItem.jsx` - BookItem component;
-* `./src/pages/CatalogPage/components/Filter.jsx` - BookItem component;
+* `./src/pages/CatalogPage/components/Filter.jsx` - Filter component;
 * `./src/pages/NotFoundPage/css/main.css` - css for page not found component;
 * `./src/pages/NotFoundPage/index.jsx` - page not found component;
 * `./src/pages/SignInPage/index.jsx` - signin component;
@@ -166,6 +177,7 @@ $ npm run fix
 * `./src/services/book-service.jsx` -  consist service for book;
 * `./src/services/books-service.jsx` -  consist service for bookList;
 * `./src/services/index.jsx` - consist all services;
+* `./src/services/purchase-service.jsx` - consist purchase service;
 * `./src/services/user-service.jsx` - consist user service;
 * `./src/storage/index.js` - localstorage class;
 * `./src/store/index.jsx` - file createStore;

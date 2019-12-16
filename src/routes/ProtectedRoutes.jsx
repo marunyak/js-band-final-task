@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Catalog from '../pages/CatalogPage';
 import NotFound from '../pages/NotFoundPage';
-import SignIn from '../pages/SignInPage';
 import Book from '../pages/BookPage';
+import Cart from '../pages/CartPage';
 
 function ProtectedRoutes({ userToken }) {
   return userToken ? (
@@ -14,14 +14,14 @@ function ProtectedRoutes({ userToken }) {
         <Redirect from="/signin" to="/books" />
         <Route path="/books/:id" component={Book} />
         <Route path="/books" component={Catalog} />
+        <Route path="/cart" component={Cart} />
         <Route path="*" component={NotFound} />
       </Switch>
     </>
   )
     : (
       <>
-        <Redirect from="/" to="/signin" />
-        <Route path="/signin" component={SignIn} />
+        <Redirect to="/signin" />
       </>
     );
 }
