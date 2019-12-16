@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/js-band-final-task/static/css/main.7d4476ea.chunk.css",
+    "main.js": "/js-band-final-task/static/js/main.51909cf3.chunk.js",
+    "main.js.map": "/js-band-final-task/static/js/main.51909cf3.chunk.js.map",
+    "runtime-main.js": "/js-band-final-task/static/js/runtime-main.d614273b.js",
+    "runtime-main.js.map": "/js-band-final-task/static/js/runtime-main.d614273b.js.map",
+    "static/js/2.c67d6f3c.chunk.js": "/js-band-final-task/static/js/2.c67d6f3c.chunk.js",
+    "static/js/2.c67d6f3c.chunk.js.map": "/js-band-final-task/static/js/2.c67d6f3c.chunk.js.map",
+    "index.html": "/js-band-final-task/index.html",
+    "precache-manifest.60b52eb7e67d58f8875eb32a512980c2.js": "/js-band-final-task/precache-manifest.60b52eb7e67d58f8875eb32a512980c2.js",
+    "service-worker.js": "/js-band-final-task/service-worker.js",
+    "static/css/main.7d4476ea.chunk.css.map": "/js-band-final-task/static/css/main.7d4476ea.chunk.css.map",
+    "static/media/defaultPhoto.jpg": "/js-band-final-task/static/media/defaultPhoto.b1c4e6fe.jpg",
+    "static/media/shopping-cart.png": "/js-band-final-task/static/media/shopping-cart.b3066055.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d614273b.js",
+    "static/js/2.c67d6f3c.chunk.js",
+    "static/css/main.7d4476ea.chunk.css",
+    "static/js/main.51909cf3.chunk.js"
+  ]
+}
